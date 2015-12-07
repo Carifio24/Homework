@@ -1,0 +1,516 @@
+
+{{{id=4|
+# set the engine as TOPCOM
+PointConfiguration.set_engine('internal')
+
+# import some stuff
+import os
+from copy import deepcopy
+import numpy as np
+import fractions
+///
+}}}
+
+{{{id=41|
+def read_tope(file, n):
+    """Reads the data for the nth polytope in the file"""
+    
+    pc = []
+    min = 4*n-3
+    max = 4*n+1
+    
+    for i, line in enumerate(file):
+        if i in range(min, max):
+            vals = str(line).split()
+            
+            if j == 0:
+                m = len(vals)
+                for k in range(m):
+                    a = []
+                    pc.append(a)
+        
+            for q in range(m):
+                pc[q].append(int(vals[q]))
+        elif i > n+3:
+            break
+            
+    return pc
+///
+}}}
+
+{{{id=42|
+def read_next_tope(file):
+    """Reads the data for the next polytope in the file"""
+    pc = []
+    _ = file.readline()
+    
+    for j in range(4):
+        str = file.readline()
+        vals = str.split()
+        
+        if j == 0:
+            m = len(vals)
+            for k in range(m):
+                a = []
+                pc.append(a)
+        
+        for q in range(m):
+            pc[q].append(int(vals[q]))
+    return pc
+///
+}}}
+
+{{{id=43|
+wd = os.getcwd()
+wd = os.path.dirname(os.path.dirname(wd))
+os.chdir(wd)
+os.chdir('media/sf_Project')
+
+filename = 'H11-2.txt'
+N = 10
+
+with open(filename) as f:
+    polytope_list = []
+        
+    for i in range(N):
+        pc = read_next_tope(f)
+        poly = LatticePolytope(pc)
+        poly = poly.polar()
+        polytope_list.append(poly)
+///
+}}}
+
+{{{id=24|
+def simplicial_complex(tope):
+    """Constructs the appropriate simplicial complex for a given polytope"""
+    ptope = tope.polyhedron()
+    return SimplicialComplex([[ptope.vertices().index(y) for y in x.vertices()] for i in range(ptope.dim()) for x in ptope.faces(i)])
+///
+}}}
+
+{{{id=51|
+def triangulations(tope, all=True, boundary=True, regular=True, star=0, fine=True):
+    """Computes the triangulations for a given polyhedron"""
+        
+    skel2_ind = tope.skeleton_points(2)
+    pts = tope.points_pc()
+    skel2_pts = sorted([pts[i] for i in skel2_ind])
+    
+    p = PointConfiguration(skel2_pts)
+    p.restrict_to_fine_triangulations(fine)
+    p.restrict_to_regular_triangulations(regular)    
+    p.restrict_to_star_triangulations(star)
+    
+    if all:
+        tri_list = p.triangulations_list()
+        if boundary:
+            for i in range(len(tri_list)):
+                tri_list[i] = tri_list[i].boundary()
+        return tri_list
+    else:
+        tri = p.triangulate()
+        if boundary:   
+            tri = tri.boundary()
+        tri = list(tri)
+        for i in range(len(tri)):
+            tri[i] = list(tri[i])
+            for j in range(len(tri[i])):
+                tri[i][j] = int(tri[i][j])
+        tri = sorted(tri)
+                          
+        return tri
+///
+}}}
+
+{{{id=80|
+def triangulation(tope, regular=True, star=0, fine=True):
+    skel2_ind = tope.skeleton_points(2)
+    pts = tope.points_pc()
+    skel2_pts = sorted([pts[i] for i in skel2_ind])
+    
+    p = PointConfiguration(skel2_pts)
+    p.restrict_to_fine_triangulations(fine)
+    p.restrict_to_regular_triangulations(regular)    
+    p.restrict_to_star_triangulations(star)
+    
+    tri = p.triangulate()
+    
+    return tri
+///
+}}}
+
+{{{id=45|
+def face_list(tope):
+    verts = list(tope.faces(0))
+    k = len(verts)  # number of vertices
+    n = 4
+    
+    el = list(Combinations(k, 2))
+    fl = list(Combinations(k, 3))
+    sl = list(Combinations(k, 4))
+    hl = list(Combinations(k, 5))
+    f_list = el + fl + sl + hl
+            
+    return f_list
+///
+}}}
+
+{{{id=73|
+def face_lists(old):
+    for i in range(n):
+        for j in range(i):
+            el.append((verts[i], verts[j]))
+            for k in range(j):
+                fl.append((verts[i], verts[j], verts[k]))
+                for l in range(k):
+                    sl.append((verts[i], verts[j], verts[k], verts[l]))
+                    for m in range(l):
+                        hl.append((verts[i], verts[j], verts[k], verts[l], verts[m]))
+///
+}}}
+
+{{{id=32|
+def face_to_poly(face, vars):
+    m = len(face)
+    poly = ''
+    for i in range(m):
+        var = vars[face[i]]
+        poly += str(var)
+        if i != (m-1):
+            poly += '*'
+            
+    return poly
+///
+}}}
+
+{{{id=46|
+def stanley_reisner(tope):
+    """Computes the Stanley-Reisner ring for a given polyhedron"""
+             
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    n = 4
+         
+    tri = triangulations(tope, False)
+    sc = SimplicialComplex(tri)
+        
+    ideal_faces = face_list(tope)
+    faces_list = list(sc.n_faces(1)) + list(sc.n_faces(2)) + list(sc.n_faces(3)) + list(sc.n_faces(-1))
+    for i in range(len(faces_list)):
+        faces_list[i] = list(faces_list[i])
+        
+    pgens = []
+            
+    for x in ideal_faces:
+        if x not in faces_list:
+            pgens.append(x)
+    
+
+    C = PolynomialRing(QQ, names=['t']+['D'+str(i+1) for i in range(k)] + ['J'+str(i+1) for i in range(k-n)])
+    DD = list(C.gens()[1:-(k-n)])
+    JJ = list(C.gens()[-(k-n):]);
+    
+    vert_dict = {verts[i]: DD[i] for i in range(k)}
+    
+    gens = []
+    for x in pgens:
+        poly = face_to_poly(list(x), DD)
+        gens.append(poly)
+            
+    Isr = C.ideal(gens)
+    return Isr
+///
+}}}
+
+{{{id=48|
+def linear_ideal(tope):
+    """Computes the linear ideal corresponding to a given polytope"""
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    n = 4
+    m = tope.dim()
+    
+    C = PolynomialRing(QQ, names=['t']+['D'+str(i+1) for i in range(k)] + ['J'+str(i+1) for i in range(k-n)])
+    DD = list(C.gens()[1:-(k-n)])
+    JJ = list(C.gens()[-(k-n):]);
+    
+    vert_dict = vert_dict = {verts[i]: str(DD[i]) for i in range(k)}
+    
+    lin_gens = []
+    for i in range(m):
+        gen = ""
+        for j in range(k):
+            coeff = int(verts[j][i])
+            gen += (str(coeff) + '*' + vert_dict[verts[j]])
+            if j != k - 1:
+                gen += "+"
+        lin_gens.append(gen)
+            
+    lin_ideal = C.ideal(lin_gens)
+    return lin_ideal
+///
+}}}
+
+{{{id=58|
+def vind_to_tope(tope, vind):
+    """Constructs the appropriate lattice subpolytope from a set of vertex indices"""
+    verts = sorted(list(tope.vertices_pc()))
+    vind = list(vind)
+    n = len(vind)
+    
+    vert_list = [verts[i] for i in vind]
+        
+    ptope = LatticePolytope(vert_list)
+    return ptope
+///
+}}}
+
+{{{id=57|
+def tri_to_topes(tope, tri):
+    """Constructs the appropriate lattice subpolytopes from a triangulation"""
+    verts = sorted(list(tope.points_pc()))
+    n = len(tri)
+    topes = []
+    
+    for i in range(n):
+        vert_list = []
+        vind = tri[i]
+        ptope = vind_to_tope(tope, vind)
+        topes.append(ptope)
+        
+    return topes
+///
+}}}
+
+{{{id=53|
+def volume(tope):
+    """Computes the volume of a lattice polytope, using the matrix determinant method"""
+
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    
+    simplex_mat = matrix([verts[i] for i in range(k)])
+    vol = abs(simplex_mat.det())
+
+    return vol
+///
+}}}
+
+{{{id=66|
+def gcd(L):
+    """Computes the gcd of a set of numbers"""
+    return reduce(fractions.gcd, L)
+///
+}}}
+
+{{{id=59|
+def vol_gcd(topes):
+    """Finds the gcd of the volumes of a set of polytopes"""
+    
+    n = len(topes)
+    vols = []
+    
+    for i in range(n):
+        vols.append(volume(topes[i]))
+        
+    g = gcd(vols)
+    return g
+///
+}}}
+
+{{{id=60|
+def gcd_tope(topes):
+    """Note that there will always be a simplex in the triangulation with the gcd as its volume."""
+    
+    g = vol_gcd(topes)
+    
+    gtopes = []
+    for ptope in topes:
+        if volume(ptope) == g:
+            gtopes.append(ptope)
+    return gtopes
+///
+}}}
+
+{{{id=61|
+def non_verts(tope, subtope):
+    """Returns a list of vertices in a polytope that are not also vertices in a given subtope"""
+    verts = sorted(list(tope.vertices_pc()))
+    sub_verts = sorted(list(subtope.vertices_pc()))
+    
+    inds = []
+    for i in range(len(verts)):
+        if verts[i] not in sub_verts:
+            inds.append(i)
+    
+    return inds
+///
+}}}
+
+{{{id=63|
+def basis_change_ideal(tope):
+    """Computes the change-of-basis ideal for a given polytope. This will be modded out as part of the construction of the Chow group."""
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    n = 4
+    C = PolynomialRing(QQ, names=['t']+['D'+str(i+1) for i in range(k)] + ['J'+str(i+1) for i in range(k-n)])
+    DD = list(C.gens()[1:-(k-n)])
+    JJ = list(C.gens()[-(k-n):]);
+    
+    tri = triangulations(tope, False)
+    topes = tri_to_topes(tope, tri)
+    stope = gcd_tope(topes)[0]
+    nv = non_verts(tope, stope)
+    
+    m = len(nv)
+    gens = []
+    for i in range(m):
+        gens.append(str(DD[nv[i]]) + '-' + str(JJ[i])) 
+    
+    bci = C.ideal(gens)
+    return bci
+///
+}}}
+
+{{{id=64|
+def chow_group(tope):
+    """Computes the Chow group"""
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    n = 4
+    C = PolynomialRing(QQ, names=['t']+['D'+str(i+1) for i in range(k)] + ['J'+str(i+1) for i in range(k-n)])
+    DD = list(C.gens()[1:-(k-n)])
+    JJ = list(C.gens()[-(k-n):]);
+    
+    bci = basis_change_ideal(tope)
+    
+    Isr = stanley_reisner(tope)
+    Ilin = linear_ideal(tope)
+    chow_ideal = Isr + Ilin
+
+    chow = QuotientRing(C, chow_ideal + bci)
+    return chow
+///
+}}}
+
+{{{id=68|
+def triple_intersections(tope):
+    """Computes the triple intersection tensor for a given polytope"""
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    n = 4
+    A = chow_group(tope)
+    
+    vol = 0
+    stope = None
+    
+    combs = Combinations(k, 4)
+    
+    for comb in combs:
+        [i, j, l, m] = comb
+        if A.gens()[i+1]*A.gens()[j+1]*A.gens()[l+1]*A.gens()[m+1] != 0:
+            simplex_mat = matrix([verts[x] for x in [i,j,l,m]])
+            vol = abs(simplex_mat.det())
+            if vol != 0:
+                n_prod = A.gens()[i+1]*A.gens()[j+1]*A.gens()[l+1]*A.gens()[m+1]
+                n_vol = vol        
+    
+    X = sum(A.gens()[1:k+1])    # the Calabi-Yau
+    intersections = np.empty(shape=(k-n,k-n,k-n))
+    
+    jcombs = []
+    for i in range(k-n):
+        for j in range(k-n):
+            for l in range(k-n):
+                jcombs.append([i, j, l])
+    
+    for comb in jcombs:
+        [i, j, l] = comb
+        prod = A.gens()[k+i+1]*A.gens()[k+j+1]*A.gens()[k+l+1]*X
+        intr = prod / n_prod
+        intr /= n_vol
+        intersections[i, j, l] = intr
+    
+    return intersections
+///
+}}}
+
+{{{id=65|
+# Let's do some examples
+
+pc = [[1,0,0,0],[0,1,0,0],[2,4,5,0],[3,3,0,5],[-6,-8,-5,-5]]   #id 1
+tope = LatticePolytope(pc)
+tope = tope.polar()
+
+print "A triangulation:", triangulations(tope, False)
+print "Stanley-Reisner ideal:", stanley_reisner(tope)
+print "Intersection Tensor:", triple_intersections(tope)
+///
+A triangulation: [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 3, 4], [0, 2, 3, 4], [1, 2, 3, 4]]
+Stanley-Reisner ideal: Ideal (D1*D2*D3*D4*D5) of Multivariate Polynomial Ring in t, D1, D2, D3, D4, D5, J1 over Rational Field
+Intersection Tensor: [[[ 1.]]]
+}}}
+
+{{{id=87|
+pc = [[1,0,0,0],[1,5,0,0],[1,0,5,0],[1,0,0,5],[-4,-5,-5,-5]]  #id 2
+tope = LatticePolytope(pc)
+tope = tope.polar()
+
+print "A triangulation:", triangulations(tope, False)
+print "Stanley-Reisner ideal:", stanley_reisner(tope)
+print "Intersection Tensor:", triple_intersections(tope)
+///
+A triangulation: [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 3, 4], [0, 2, 3, 4], [1, 2, 3, 4]]
+Stanley-Reisner ideal: Ideal (D1*D2*D3*D4*D5) of Multivariate Polynomial Ring in t, D1, D2, D3, D4, D5, J1 over Rational Field
+Intersection Tensor: [[[ 5.]]]
+}}}
+
+{{{id=88|
+# Now let's try some where the dual has more vertices - i.e, bigger intersection tensor
+
+pc = [[1,0,0,0],[1,4,0,0],[1,0,4,0],[0,0,0,1],[0,4,0,1],[0,0,4,1],[-4,-4,-4,1],[1,-4,-4,-4]]   #id 15
+tope = LatticePolytope(pc)
+tope = tope.polar()
+
+print "A triangulation:", triangulations(tope, False)
+print ""
+print "Stanley-Reisner ideal:", stanley_reisner(tope)
+print ""
+print "Intersection Tensor:"
+print triple_intersections(tope)
+///
+A triangulation: [[0, 1, 2, 3], [0, 1, 2, 5], [0, 1, 3, 5], [0, 2, 3, 4], [0, 2, 4, 5], [0, 3, 4, 5], [1, 2, 3, 5], [2, 3, 4, 5]]
+
+Stanley-Reisner ideal: Ideal (D2*D5, D1*D2*D5, D2*D3*D5, D2*D4*D5, D2*D5*D6, D1*D2*D3*D5, D1*D2*D4*D5, D1*D2*D5*D6, D1*D3*D4*D6, D2*D3*D4*D5, D2*D3*D5*D6, D2*D4*D5*D6, D1*D2*D3*D4*D5, D1*D2*D3*D4*D6, D1*D2*D3*D5*D6, D1*D2*D4*D5*D6, D1*D3*D4*D5*D6, D2*D3*D4*D5*D6) of Multivariate Polynomial Ring in t, D1, D2, D3, D4, D5, D6, J1, J2 over Rational Field
+
+Intersection Tensor:
+[[[ 0.  0.]
+  [ 0.  4.]]
+
+ [[ 0.  4.]
+  [ 4.  5.]]]
+}}}
+
+{{{id=91|
+pc = [[1,0,0,0],[1,3,0,0,],[1,0,2,0],[1,0,0,2],[1,3,2,0],[1,3,0,2],[-2,-3,2,-3],[-2,-3,-3,2],[-2,-3,-3,-3]]   #id 18
+tope = LatticePolytope(pc)
+tope = tope.polar()
+
+print "A triangulation:", triangulations(tope, False)
+print ""
+print "Stanley-Reisner ideal:", stanley_reisner(tope)
+print ""
+print "Intersection Tensor:"
+print triple_intersections(tope)
+///
+A triangulation: [[0, 1, 2, 3], [0, 1, 2, 5], [0, 1, 3, 4], [0, 1, 4, 5], [0, 2, 3, 4], [0, 2, 4, 5], [1, 2, 3, 5], [1, 3, 4, 5], [2, 3, 4, 5]]
+
+Stanley-Reisner ideal: Ideal (D1*D4*D6, D2*D3*D5, D1*D2*D3*D5, D1*D2*D4*D6, D1*D3*D4*D6, D1*D4*D5*D6, D2*D3*D4*D5, D2*D3*D5*D6, D1*D2*D3*D4*D5, D1*D2*D3*D4*D6, D1*D2*D3*D5*D6, D1*D2*D4*D5*D6, D1*D3*D4*D5*D6, D2*D3*D4*D5*D6) of Multivariate Polynomial Ring in t, D1, D2, D3, D4, D5, D6, J1, J2 over Rational Field
+
+Intersection Tensor:
+[[[ 0.  3.]
+  [ 3.  5.]]
+
+ [[ 3.  5.]
+  [ 5.  5.]]]
+}}}
