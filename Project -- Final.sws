@@ -1,0 +1,3130 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:8000/home/admin/1/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Project -- Sage</title>
+        
+	
+        
+        <link type="text/css" rel="stylesheet" href="./Project -- Final_files/main.css">
+        
+        
+        <script type="text/javascript" src="./Project -- Final_files/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="./Project -- Final_files/localization.js"></script>
+        <script type="text/javascript" src="./Project -- Final_files/json2.min.js"></script>
+        
+
+<!-- trying to work around JSmol collisions with jquery--->
+<script type="text/javascript" src="./Project -- Final_files/jquery-1.11.0.min.js"></script>
+<!-- jQuery UI - interacts, widgets, drag-drop, etc. -->
+<link rel="stylesheet" href="http://localhost:8000/javascript/jqueryui/css/sage/jquery-ui-1.10.4.custom.css">
+<script type="text/javascript" src="./Project -- Final_files/jquery-ui-1.10.4.custom.min.js"></script>
+
+<!-- jQuery plugins - color pickers, shift-click, AJAX forms, IE fixes, notifications -->
+<link rel="stylesheet" href="./Project -- Final_files/farbtastic.css" type="text/css">
+<script type="text/javascript" src="./Project -- Final_files/farbtastic.min.js"></script>
+<script type="text/javascript" src="./Project -- Final_files/jquery.event.extendedclick.min.js"></script>
+<script type="text/javascript" src="./Project -- Final_files/jquery.form.min.js"></script>
+<script type="text/javascript" src="./Project -- Final_files/jquery.bgiframe.min.js"></script>
+<link rel="stylesheet" href="./Project -- Final_files/jPicker-1.1.6.min.css" type="text/css">
+<script type="text/javascript" src="./Project -- Final_files/jpicker-1.1.6.min.js"></script>
+<link rel="stylesheet" media="screen" type="text/css" href="./Project -- Final_files/colorpicker.css">
+<script type="text/javascript" src="./Project -- Final_files/colorpicker.min.js"></script>
+<script type="text/javascript" src="./Project -- Final_files/ui.achtung-mod.min.js"></script>
+
+<!-- Jmol - embedded 3D graphics **needs to be before jmol_lib.js** -->
+<script type="text/javascript" src="./Project -- Final_files/JSmol.min.nojq.js"></script>
+
+
+<script type="text/javascript" src="./Project -- Final_files/notebook_lib.js"></script>
+<script type="text/javascript" src="./Project -- Final_files/notebook_dynamic.js"></script>
+
+
+
+<script type="text/javascript" src="./Project -- Final_files/MathJax.js"></script>
+
+
+<!-- Sage3d - accelerated 3D graphics -->
+<script type="text/javascript" src="./Project -- Final_files/sage3d.js"></script>
+
+
+<!-- TinyMCE and jEditable - in-place editing of text cells -->
+<script type="text/javascript" src="./Project -- Final_files/tiny_mce.js"></script>
+<script type="text/javascript" src="./Project -- Final_files/jquery.jeditable.mini.js" charset="utf-8"></script>
+<script type="text/javascript" src="./Project -- Final_files/tinymce.js"></script>
+<script type="text/javascript" src="./Project -- Final_files/embed.js"></script>
+
+
+<script type="text/javascript">user_name= "admin";</script>
+
+<script type="text/javascript">
+    worksheet_filename = "admin/1";
+    worksheet_name = 'Project';
+    
+        server_ping_while_alive();
+    
+</script>
+
+
+
+        
+        
+        
+        <script type="text/javascript" src="./Project -- Final_files/master.js"></script>
+    <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+.MathJax .mo, .MathJax .mi {color: inherit ! important}
+</style><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?rev=2.5.0') format('woff'), url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?rev=2.5.0') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?rev=2.5.0') format('woff'), url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?rev=2.5.0') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?rev=2.5.0') format('woff'), url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?rev=2.5.0') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?rev=2.5.0') format('woff'), url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?rev=2.5.0') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?rev=2.5.0') format('woff'), url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?rev=2.5.0') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?rev=2.5.0') format('woff'), url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?rev=2.5.0') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?rev=2.5.0') format('woff'), url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?rev=2.5.0') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?rev=2.5.0') format('woff'), url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?rev=2.5.0') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?rev=2.5.0') format('woff'), url('http://localhost:8000/javascript/mathjax/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?rev=2.5.0') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+    <body id="user-worksheet-page" class="active-worksheet" style=""><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+        
+        <div id="header">
+            
+            <div id="top-bar">
+                <div id="banner">
+                    <a class="banner" href="http://localhost:8000/">
+                        <img align="top" src="./Project -- Final_files/sagenb.png" alt="Sage"><span>The Sage Notebook</span>
+                    </a>
+                    <span class="ping" id="ping">Searching for Sage server...</span>
+                    <div class="version">
+                        Version 6.8
+                    </div>
+                </div>
+                
+<div id="main-controls" class="controls">
+    <ul>
+        <li class="username">admin</li>
+        
+        <li><a id="toggle-link" title="Toggle the top bar" onclick="$(&#39;#worksheet-bar&#39;).toggle()">Toggle</a></li>
+        <li><a title="Back to your personal worksheet list" href="http://localhost:8000/home/admin">Home</a></li>
+        
+        <li><a title="Browse the published worksheets" href="http://localhost:8000/pub">Published</a></li>
+        <li><a title="View a log of recent computations" href="http://localhost:8000/home/admin/1/#" onclick="history_window()">Log</a></li>
+        
+        <li><a title="Change account settings including password" href="http://localhost:8000/settings">Settings</a></li>
+        <li><a title="Documentation" href="http://localhost:8000/home/admin/1/#" onclick="help()">Help</a></li>
+        <li><a title="Report a problem or submit a bug to improve Sage" href="http://localhost:8000/home/admin/1/#" onclick="bugreport()">Report a Problem</a></li>
+        <li><a title="Log out of the Sage notebook" href="http://localhost:8000/logout">Sign out</a></li>
+        
+    </ul>
+</div>
+
+            </div>
+            
+        </div>
+        <div id="main">
+            
+
+
+<div id="worksheet-bar">
+    <div class="worksheet_title">
+        <a id="worksheet_title" class="worksheet_title" onclick="rename_worksheet(); return false;" title="Click to rename this worksheet">
+            Project
+        </a>
+        <div><span class="lastedit">last edited 
+<span class="lastedit">Dec 6, 2015, 4:39:41 PM by admin</span></span></div>
+        
+    </div>
+    <div id="save-discard-buttons">
+        
+        <button name="button_save" title="Save changes" onclick="save_worksheet();">Save</button><button title="Save changes and close window" onclick="save_worksheet_and_close();" name="button_save">Save &amp; quit</button><button title="Discard changes to this worksheet" onclick="worksheet_discard();">Discard &amp; quit</button>
+        
+    </div>
+
+    <div id="worksheet-menu">
+    
+        <select class="worksheet" onchange="go_option(this);" id="file-menu">
+            <option title="Select a file related function" value="" selected="">File...</option>
+            <option title="Load a new worksheet stored in a file" value="upload_worksheet_button();">Load worksheet from a file...</option>
+            <option title="Create a new worksheet" value="new_worksheet();">New worksheet</option>
+            <option title="Save this worksheet to an sws file" value="download_worksheet();">Save worksheet to a file...</option>
+            <option title="Print this worksheet" value="print_worksheet();">Print</option>
+            <option title="Rename this worksheet" value="rename_worksheet();">Rename worksheet</option>
+            <option title="Copy this worksheet" value="copy_worksheet();">Copy worksheet</option>
+            <option title="Move this worksheet to the trash" value="delete_worksheet(&#39;admin/1&#39;);">Delete worksheet</option>
+        </select>
+
+        <select class="worksheet" onchange="go_option(this);" id="action-menu">
+            <option title="Select a worksheet function" value="" selected="">Action...</option>
+            <option title="Interrupt currently running calculations, if possible" value="interrupt();">Interrupt</option>
+            <option title="Restart the worksheet process" value="restart_sage();">Restart worksheet</option>
+            <option title="Quit the worksheet process" value="save_worksheet_and_close();">Save and quit worksheet</option> 
+            <option value="">---------------------------</option>
+            <option title="Evaluate all input cells in the worksheet" value="evaluate_all();">Evaluate All</option>
+            <option title="Hide all output" value="hide_all();">Hide All Output</option>
+            <option title="Show all output" value="show_all();">Show All Output</option>
+            <option title="Delete all output" value="delete_all_output();">Delete All Output</option>
+            <option value="">---------------------------</option>
+            <option title="Switch to single-cell mode" value="slide_mode();">One Cell Mode</option>
+            <option title="Switch to multi-cell mode" value="cell_mode();">Multi Cell Mode</option> 
+        </select>
+        <select class="worksheet" onchange="handle_data_menu(this);" id="data-menu">
+            <option title="Select an attached file" value="" selected="">Data...</option>
+            <option title="Upload or create a data file in a wide range of formats" value="__upload_data_file__">Upload or create file...</option>
+            <option value="">--------------------</option>
+            
+        </select>
+
+        
+        <select onchange="go_system_select(this, 0);" class="worksheet" id="systems-menu">
+            
+            <option title="Evaluate all input cells using sage" selected="" value="sage">
+                sage
+            </option>
+            
+            <option title="Evaluate all input cells using gap" value="gap">
+                gap
+            </option>
+            
+            <option title="Evaluate all input cells using gp" value="gp">
+                gp
+            </option>
+            
+            <option title="Evaluate all input cells using html" value="html">
+                html
+            </option>
+            
+            <option title="Evaluate all input cells using latex" value="latex">
+                latex
+            </option>
+            
+            <option title="Evaluate all input cells using maxima" value="maxima">
+                maxima
+            </option>
+            
+            <option title="Evaluate all input cells using python" value="python">
+                python
+            </option>
+            
+            <option title="Evaluate all input cells using r" value="r">
+                r
+            </option>
+            
+            <option title="Evaluate all input cells using sh" value="sh">
+                sh
+            </option>
+            
+            <option title="Evaluate all input cells using singular" value="singular">
+                singular
+            </option>
+            
+            <option title="Evaluate all input cells using axiom" value="axiom">
+                axiom (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using fricas" value="fricas">
+                fricas (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using kash" value="kash">
+                kash (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using macaulay2" value="macaulay2">
+                macaulay2 (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using magma" value="magma">
+                magma (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using maple" value="maple">
+                maple (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using mathematica" value="mathematica">
+                mathematica (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using matlab" value="matlab">
+                matlab (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using mupad" value="mupad">
+                mupad (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using octave" value="octave">
+                octave (optional)
+            </option>
+            
+            <option title="Evaluate all input cells using scilab" value="scilab">
+                scilab (optional)
+            </option>
+            
+        </select>    
+        <input type="checkbox" title="Enable/disable pretty_printing" onchange="pretty_print_check(this.checked);" class="worksheet" value="pretty_print">&nbsp;Typeset
+        <input id="3D_check" ,="" type="checkbox" title="Load 3-D Live. Not recommended for worksheets with &gt; 2 3-D Plots." onchange="live_3D_check(this.checked);" class="worksheet" value="live_3D">&nbsp;Load 3-D Live
+        <input id="3D_use_java" ,="" type="checkbox" title="Use java for 3-D. Only applies to this running of worksheet." onchange="3D_use_java_check(this.checked);" class="worksheet" value="3D_use_java">&nbsp;Use java for 3-D
+         
+     
+    </div>
+    <div id="share-publish-buttons">
+        
+        
+        <a title="Print this worksheet" class="control" onclick="print_worksheet()">Print</a>
+        <a class="
+        control-select
+        " title="Interactively use this worksheet" href="./Project -- Final_files/Project -- Final.sws">Worksheet</a>        
+        <a class="
+        control
+        " title="Edit text version of this worksheet" href="http://localhost:8000/home/admin/1/edit">Edit</a>
+        <a class="
+        control
+        " title="View plain text version of this worksheet" href="http://localhost:8000/home/admin/1/text">Text</a>
+        <a class="
+        control
+        " title="View changes to this worksheet over time" href="http://localhost:8000/home/admin/1/revisions">Revisions</a>
+        <a class="
+        control
+        " title="Let others edit this worksheet" href="http://localhost:8000/home/admin/1/share">Share</a>
+        <a class="
+        control
+        " title="Make this worksheet publicly viewable" href="http://localhost:8000/home/admin/1/publish">Publish</a>
+        
+    </div>
+</div>
+<div class="hidden" id="slide_controls">
+    <div class="slideshow_control">
+        <a class="slide_arrow" onclick="slide_next()">&gt;</a>
+        <a class="slide_arrow" onclick="slide_last()">&gt;&gt;</a> <span class="vbar"></span>
+        <a class="cell_mode" onclick="cell_mode()">Exit</a>
+    </div>
+    <div class="slideshow_progress" id="slideshow_progress" onclick="slide_next()">
+        <div class="slideshow_progress_bar" id="slideshow_progress_bar">&nbsp;</div>
+        <div class="slideshow_progress_text" id="slideshow_progress_text">&nbsp;</div>
+    </div>
+    <div class="slideshow_control">
+        <a class="slide_arrow" onclick="slide_first()">&lt;&lt;</a>
+        <a class="slide_arrow" onclick="slide_prev()">&lt;</a>
+    </div>
+</div>
+
+
+<div class="worksheet" id="worksheet">
+    
+
+
+
+    
+
+
+<div class="cell_input_active" id="cell_resizer" style="width: 1825px;">pc = [[1,0,0,0],[1,3,0,0,],[1,0,2,0],[1,0,0,2],[1,3,2,0],[1,3,0,2],[-2,-3,2,-3],[-2,-3,-3,2],[-2,-3,-3,-3]] &nbsp; #id 18<br>tope = LatticePolytope(pc)<br>tope = tope.polar()<br><br>print "A triangulation:", triangulations(tope, False)<br>print ""<br>print "Stanley-Reisner ideal:", stanley_reisner(tope)<br>print ""<br>print "Intersection Tensor:"<br>print triple_intersections(tope)&nbsp;</div>
+<div class="worksheet_cell_list" id="worksheet_cell_list">
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_4" class="cell_visible">
+    <div id="cell_4" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before4">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before4" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before4" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before4"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before4").bind("click",function (e) {
+                    insert_new_cell_before(4);
+                });
+                
+                $("#insert_new_text_cell_before4").bind("click",function (e) {
+                   insert_new_text_cell_before(4);
+                });
+                $("#legacy_new_cell_before4").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(4);
+                   } else {
+                      insert_new_cell_before(4);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="8" cols="80" spellcheck="false" id="cell_input_4" style="height: 159px;"># set the engine as TOPCOM
+PointConfiguration.set_engine('internal')
+
+# import some stuff
+import os
+from copy import deepcopy
+import numpy as np
+import fractions
+import itertools</textarea>
+                <input type="button" class="eval_button_active" id="eval_button4" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_4" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_4" onclick="cycle_cell_output_type(4);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_4">
+                            <div class="cell_output_wrap" id="cell_output_4"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_4"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_4"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_41" class="cell_visible">
+    <div id="cell_41" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before41">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before41" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before41" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before41"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before41").bind("click",function (e) {
+                    insert_new_cell_before(41);
+                });
+                
+                $("#insert_new_text_cell_before41").bind("click",function (e) {
+                   insert_new_text_cell_before(41);
+                });
+                $("#legacy_new_cell_before41").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(41);
+                   } else {
+                      insert_new_cell_before(41);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="23" cols="80" spellcheck="false" id="cell_input_41" style="height: 444px;">def read_tope(file, n):
+    """Reads the data for the nth polytope in the file"""
+    
+    pc = []
+    min = 4*n-3
+    max = 4*n+1
+    
+    for i, line in enumerate(file):
+        if i in range(min, max):
+            vals = str(line).split()
+            
+            if j == 0:
+                m = len(vals)
+                for k in range(m):
+                    a = []
+                    pc.append(a)
+        
+            for q in range(m):
+                pc[q].append(int(vals[q]))
+        elif i &gt; n+3:
+            break
+            
+    return pc</textarea>
+                <input type="button" class="eval_button" id="eval_button41" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_41" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_41" onclick="cycle_cell_output_type(41);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_41">
+                            <div class="cell_output_wrap" id="cell_output_41">
+                                
+                                    
+                                
+                            </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_41">
+                                    
+                                </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_41">
+                                    
+                                </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_42" class="cell_visible">
+    <div id="cell_42" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before42">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before42" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before42" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before42"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before42").bind("click",function (e) {
+                    insert_new_cell_before(42);
+                });
+                
+                $("#insert_new_text_cell_before42").bind("click",function (e) {
+                   insert_new_text_cell_before(42);
+                });
+                $("#legacy_new_cell_before42").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(42);
+                   } else {
+                      insert_new_cell_before(42);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="18" cols="80" spellcheck="false" id="cell_input_42" style="height: 349px;">def read_next_tope(file):
+    """Reads the data for the next polytope in the file"""
+    pc = []
+    _ = file.readline()
+    
+    for j in range(4):
+        str = file.readline()
+        vals = str.split()
+        
+        if j == 0:
+            m = len(vals)
+            for k in range(m):
+                a = []
+                pc.append(a)
+        
+        for q in range(m):
+            pc[q].append(int(vals[q]))
+    return pc</textarea>
+                <input type="button" class="eval_button" id="eval_button42" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_42" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_42" onclick="cycle_cell_output_type(42);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_42">
+                            <div class="cell_output_wrap" id="cell_output_42">
+                                
+                                    
+                                
+                            </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_42">
+                                    
+                                </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_42">
+                                    
+                                </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_43" class="cell_visible">
+    <div id="cell_43" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before43">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before43" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before43" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before43"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before43").bind("click",function (e) {
+                    insert_new_cell_before(43);
+                });
+                
+                $("#insert_new_text_cell_before43").bind("click",function (e) {
+                   insert_new_text_cell_before(43);
+                });
+                $("#legacy_new_cell_before43").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(43);
+                   } else {
+                      insert_new_cell_before(43);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="14" cols="80" spellcheck="false" id="cell_input_43" style="height: 311px;">wd = os.getcwd()
+wd = os.path.dirname(os.path.dirname(wd))
+os.chdir(wd)
+os.chdir('media/sf_Project')
+
+filename = 'H11-2.txt'
+N = 10
+
+with open(filename) as f:
+    polytope_list = []
+        
+    for i in range(N):
+        pc = read_next_tope(f)
+        poly = LatticePolytope(pc)
+        poly = poly.polar()
+        polytope_list.append(poly)</textarea>
+                <input type="button" class="eval_button" id="eval_button43" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_43" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_43" onclick="cycle_cell_output_type(43);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_43">
+                            <div class="cell_output_wrap" id="cell_output_43">
+                                
+                                    
+                                
+                            </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_43">
+                                    
+                                </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_43">
+                                    
+                                </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_24" class="cell_visible">
+    <div id="cell_24" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before24">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before24" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before24" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before24"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before24").bind("click",function (e) {
+                    insert_new_cell_before(24);
+                });
+                
+                $("#insert_new_text_cell_before24").bind("click",function (e) {
+                   insert_new_text_cell_before(24);
+                });
+                $("#legacy_new_cell_before24").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(24);
+                   } else {
+                      insert_new_cell_before(24);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="5" cols="80" spellcheck="false" id="cell_input_24" style="height: 83px;">def simplicial_complex(tope):
+    """Constructs the appropriate simplicial complex for a given polytope"""
+    ptope = tope.polyhedron()
+    return SimplicialComplex([[ptope.vertices().index(y) for y in x.vertices()] for i in range(ptope.dim()) for x in ptope.faces(i)])</textarea>
+                <input type="button" class="eval_button" id="eval_button24" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_24" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_24" onclick="cycle_cell_output_type(24);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_24">
+                            <div class="cell_output_wrap" id="cell_output_24">
+                                
+                                    
+                                
+                            </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_24">
+                                    
+                                </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_24">
+                                    
+                                </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_51" class="cell_visible">
+    <div id="cell_51" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before51">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before51" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before51" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before51"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before51").bind("click",function (e) {
+                    insert_new_cell_before(51);
+                });
+                
+                $("#insert_new_text_cell_before51").bind("click",function (e) {
+                   insert_new_text_cell_before(51);
+                });
+                $("#legacy_new_cell_before51").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(51);
+                   } else {
+                      insert_new_cell_before(51);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="21" cols="80" spellcheck="false" id="cell_input_51" style="height: 577px;">def triangulations(tope, all=True, regular=True, star=0, fine=True):
+    """Computes the triangulations for a given polyhedron"""
+        
+    skel2_ind = tope.skeleton_points(2)
+    pts = tope.points_pc()
+    skel2_pts = sorted([pts[i] for i in skel2_ind])
+    
+    p = PointConfiguration(skel2_pts)
+    p.restrict_to_fine_triangulations(fine)
+    p.restrict_to_regular_triangulations(regular)    
+    p.restrict_to_star_triangulations(star)
+    
+    if all:
+        tri_list = p.triangulations_list()
+        for i in range(len(tri_list)):
+            tri_list[i] = tri_list[i].boundary()
+        return tri_list
+    else:
+        tri = p.triangulate()
+        tri = tri.boundary()
+        return tri</textarea>
+                <input type="button" class="eval_button" id="eval_button51" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_51" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_51" onclick="cycle_cell_output_type(51);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_51">
+                            <div class="cell_output_wrap" id="cell_output_51"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_51"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_51"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_80"><div id="cell_80" class="cell_not_evaluated">
+
+    
+    
+
+
+
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before80">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before80" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before80" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before80"></div>
+            </div>
+            
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="1" cols="80" spellcheck="false" id="cell_input_80" style="height: 254px;"></textarea>
+                <input type="button" class="eval_button" id="eval_button80" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_80" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_80" onclick="cycle_cell_output_type(80);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_80">
+                            <div class="cell_output_wrap" id="cell_output_80"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_80"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_80"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+</div></div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_45" class="cell_visible">
+    <div id="cell_45" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before45">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before45" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before45" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before45"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before45").bind("click",function (e) {
+                    insert_new_cell_before(45);
+                });
+                
+                $("#insert_new_text_cell_before45").bind("click",function (e) {
+                   insert_new_text_cell_before(45);
+                });
+                $("#legacy_new_cell_before45").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(45);
+                   } else {
+                      insert_new_cell_before(45);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="11" cols="80" spellcheck="false" id="cell_input_45" style="height: 235px;">def face_lists(tope):
+    """Computes the possible lists of faces of a given polytope"""
+    verts = list(tope.faces(0))
+    n = len(verts)  # number of vertices
+    
+    el = Combinations(n, 2)
+    fl = Combinations(n, 3)
+    sl = Combinations(n, 4)
+    hl = Combinations(n, 5)
+            
+    return list(el), list(fl), list(sl), list(hl)</textarea>
+                <input type="button" class="eval_button" id="eval_button45" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_45" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_45" onclick="cycle_cell_output_type(45);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_45">
+                            <div class="cell_output_nowrap" id="cell_output_45"> </div>
+                            
+                                <div class="cell_output_nowrap_nowrap" id="cell_output_nowrap_45"> </div>
+                            
+                                <div class="cell_output_html_nowrap" id="cell_output_html_45"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_73" class="cell_visible">
+    <div id="cell_73" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before73">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before73" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before73" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before73"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before73").bind("click",function (e) {
+                    insert_new_cell_before(73);
+                });
+                
+                $("#insert_new_text_cell_before73").bind("click",function (e) {
+                   insert_new_text_cell_before(73);
+                });
+                $("#legacy_new_cell_before73").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(73);
+                   } else {
+                      insert_new_cell_before(73);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="11" cols="80" spellcheck="false" id="cell_input_73" style="height: 197px;">def face_lists(old):
+    for i in range(n):
+        for j in range(i):
+            el.append((verts[i], verts[j]))
+            for k in range(j):
+                fl.append((verts[i], verts[j], verts[k]))
+                for l in range(k):
+                    sl.append((verts[i], verts[j], verts[k], verts[l]))
+                    for m in range(l):
+                        hl.append((verts[i], verts[j], verts[k], verts[l], verts[m]))</textarea>
+                <input type="button" class="eval_button" id="eval_button73" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_73" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_73" onclick="cycle_cell_output_type(73);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_73">
+                            <div class="cell_output_wrap" id="cell_output_73">
+                                
+                                    
+                                
+                            </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_73">
+                                    
+                                </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_73">
+                                    
+                                </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_32" class="cell_visible">
+    <div id="cell_32" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before32">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before32" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before32" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before32"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before32").bind("click",function (e) {
+                    insert_new_cell_before(32);
+                });
+                
+                $("#insert_new_text_cell_before32").bind("click",function (e) {
+                   insert_new_text_cell_before(32);
+                });
+                $("#legacy_new_cell_before32").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(32);
+                   } else {
+                      insert_new_cell_before(32);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="10" cols="80" spellcheck="false" id="cell_input_32" style="height: 197px;">def face_to_poly(face, vars):
+    m = len(face)
+    poly = ''
+    for i in range(m):
+        var = vars[face[i]]
+        poly += str(var)
+        if i != (m-1):
+            poly += '*'
+            
+    return poly</textarea>
+                <input type="button" class="eval_button" id="eval_button32" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_32" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_32" onclick="cycle_cell_output_type(32);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_32">
+                            <div class="cell_output_wrap" id="cell_output_32">
+                                
+                                    
+                                
+                            </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_32">
+                                    
+                                </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_32">
+                                    
+                                </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_46" class="cell_visible">
+    <div id="cell_46" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before46">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before46" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before46" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before46"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before46").bind("click",function (e) {
+                    insert_new_cell_before(46);
+                });
+                
+                $("#insert_new_text_cell_before46").bind("click",function (e) {
+                   insert_new_text_cell_before(46);
+                });
+                $("#legacy_new_cell_before46").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(46);
+                   } else {
+                      insert_new_cell_before(46);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="52" cols="80" spellcheck="false" id="cell_input_46" style="height: 672px;">def stanley_reisner(tope):
+    """Computes the Stanley-Reisner ring for a given polyhedron"""
+    
+    tri = triangulations(tope, False)
+    tri = list(tri)
+    for x in tri:
+        x = list(x)
+        for j in x:
+            j = int(j)
+            
+            
+    verts = list(tope.faces(0))
+    k = len(verts)
+    n = 4
+             
+    el, fl, sl, hl = face_lists(tope)
+    ideal_faces = el + fl + sl + hl
+    faces_list = tri
+    for i in range(len(ideal_faces)):
+        ideal_faces[i] = set(ideal_faces[i])
+    for i in range(len(faces_list)):
+        faces_list[i] = set(faces_list[i])
+        
+    pgens = []
+    
+    
+    for x in ideal_faces:
+        bool = True
+        for i in range(len(tri)):
+            if x.issubset(tri[i]):
+                bool = False
+        if bool:
+            pgens.append(x)
+
+    for i in range(len(pgens)):
+        pgens[i] = list(pgens[i])
+    print "SR gens:", pgens
+    
+        
+
+    C = PolynomialRing(QQ, names=['t']+['D'+str(i+1) for i in range(k)] + ['J'+str(i+1) for i in range(k-n)])
+    DD = list(C.gens()[1:-(k-n)])
+    JJ = list(C.gens()[-(k-n):]);
+    
+    vert_dict = {verts[i]: DD[i] for i in range(k)}
+    
+    gens = []
+    for x in pgens:
+        poly = face_to_poly(list(x), DD)
+        gens.append(poly)
+            
+    Isr = C.ideal(gens)
+    return Isr</textarea>
+                <input type="button" class="eval_button" id="eval_button46" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_46" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_46" onclick="cycle_cell_output_type(46);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_46">
+                            <div class="cell_output_nowrap" id="cell_output_46"> </div>
+                            
+                                <div class="cell_output_nowrap_nowrap" id="cell_output_nowrap_46"> </div>
+                            
+                                <div class="cell_output_html_nowrap" id="cell_output_html_46"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_48" class="cell_visible">
+    <div id="cell_48" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before48">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before48" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before48" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before48"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before48").bind("click",function (e) {
+                    insert_new_cell_before(48);
+                });
+                
+                $("#insert_new_text_cell_before48").bind("click",function (e) {
+                   insert_new_text_cell_before(48);
+                });
+                $("#legacy_new_cell_before48").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(48);
+                   } else {
+                      insert_new_cell_before(48);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="28" cols="80" spellcheck="false" id="cell_input_48" style="height: 482px;">def linear_ideal(tope):
+    """Computes the linear ideal corresponding to a given polytope"""
+    verts = sorted(tope.vertices_pc())
+    k = len(verts)
+    n = 4
+    m = tope.dim()
+    
+    C = PolynomialRing(QQ, names=['t']+['D'+str(i+1) for i in range(k)] + ['J'+str(i+1) for i in range(k-n)])
+    DD = list(C.gens()[1:-(k-n)])
+    JJ = list(C.gens()[-(k-n):]);
+    
+    vert_dict = vert_dict = {verts[i]: str(DD[i]) for i in range(k)}
+    
+    #divisors = [toric_divisor(DD[i], R) for i in range(k)]
+    
+    lin_gens = []
+    for i in range(m):
+        gen = ""
+        for j in range(k):
+            coeff = int(verts[j][i])
+            gen += (str(coeff) + '*' + vert_dict[verts[j]])
+            if j != k - 1:
+                gen += "+"
+        lin_gens.append(gen)
+            
+    lin_ideal = C.ideal(lin_gens)
+    return lin_ideal</textarea>
+                <input type="button" class="eval_button" id="eval_button48" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_48" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_48" onclick="cycle_cell_output_type(48);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_48">
+                            <div class="cell_output_wrap" id="cell_output_48"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_48"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_48"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_58" class="cell_visible">
+    <div id="cell_58" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before58">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before58" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before58" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before58"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before58").bind("click",function (e) {
+                    insert_new_cell_before(58);
+                });
+                
+                $("#insert_new_text_cell_before58").bind("click",function (e) {
+                   insert_new_text_cell_before(58);
+                });
+                $("#legacy_new_cell_before58").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(58);
+                   } else {
+                      insert_new_cell_before(58);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="15" cols="80" spellcheck="false" id="cell_input_58" style="height: 197px;">def vind_to_tope(tope, vind):
+    """Constructs the appropriate lattice subpolytope from a set of vertex indices"""
+    verts = sorted(list(tope.vertices_pc()))
+    vind = list(vind)
+    n = len(vind)
+    
+    vert_list = []
+    for i in range(n):
+        #print i, vind[i]
+        vert = verts[vind[i]]
+        vert_list.append(vert)
+        
+    ptope = LatticePolytope(vert_list)
+    return ptope</textarea>
+                <input type="button" class="eval_button" id="eval_button58" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_58" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_58" onclick="cycle_cell_output_type(58);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_58">
+                            <div class="cell_output_wrap" id="cell_output_58"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_58"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_58"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_57" class="cell_visible">
+    <div id="cell_57" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before57">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before57" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before57" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before57"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before57").bind("click",function (e) {
+                    insert_new_cell_before(57);
+                });
+                
+                $("#insert_new_text_cell_before57").bind("click",function (e) {
+                   insert_new_text_cell_before(57);
+                });
+                $("#legacy_new_cell_before57").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(57);
+                   } else {
+                      insert_new_cell_before(57);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="14" cols="80" spellcheck="false" id="cell_input_57" style="height: 254px;">def tri_to_topes(tope, tri):
+    """Constructs the appropriate lattice subpolytopes from a triangulation"""
+    verts = tope.points_pc()
+    tri = list(tri)
+    n = len(tri)
+    topes = []
+    
+    for i in range(n):
+        vert_list = []
+        vind = list(tri[i])
+        ptope = vind_to_tope(tope, vind)
+        topes.append(ptope)
+        
+    return topes</textarea>
+                <input type="button" class="eval_button" id="eval_button57" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_57" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_57" onclick="cycle_cell_output_type(57);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_57">
+                            <div class="cell_output_wrap" id="cell_output_57"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_57"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_57"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_53" class="cell_visible">
+    <div id="cell_53" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before53">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before53" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before53" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before53"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before53").bind("click",function (e) {
+                    insert_new_cell_before(53);
+                });
+                
+                $("#insert_new_text_cell_before53").bind("click",function (e) {
+                   insert_new_text_cell_before(53);
+                });
+                $("#legacy_new_cell_before53").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(53);
+                   } else {
+                      insert_new_cell_before(53);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="16" cols="80" spellcheck="false" id="cell_input_53" style="height: 197px;">def volume(tope):
+    """Computes the volume of a lattice polytope, using the matrix determinant method"""
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    
+    mat_cols = []
+    for i in range(k):
+        mat_cols.append(deepcopy(list(verts[i])))
+        
+    mat = np.array([list(mat_cols[i]) for i in range(4)])
+        
+    vol = abs(np.linalg.det(mat))
+    vol = int(round(vol, 0))         # this is to adjust for some numerical issues - i.e. 2.99996 - that were messing things up
+    return vol</textarea>
+                <input type="button" class="eval_button" id="eval_button53" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_53" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_53" onclick="cycle_cell_output_type(53);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_53">
+                            <div class="cell_output_nowrap" id="cell_output_53"> </div>
+                            
+                                <div class="cell_output_nowrap_nowrap" id="cell_output_nowrap_53"> </div>
+                            
+                                <div class="cell_output_html_nowrap" id="cell_output_html_53"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_66" class="cell_visible">
+    <div id="cell_66" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before66">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before66" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before66" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before66"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before66").bind("click",function (e) {
+                    insert_new_cell_before(66);
+                });
+                
+                $("#insert_new_text_cell_before66").bind("click",function (e) {
+                   insert_new_text_cell_before(66);
+                });
+                $("#legacy_new_cell_before66").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(66);
+                   } else {
+                      insert_new_cell_before(66);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="3" cols="80" spellcheck="false" id="cell_input_66" style="height: 64px;">def gcd(L):
+    """Computes the gcd of a set of numbers"""
+    return reduce(fractions.gcd, L)</textarea>
+                <input type="button" class="eval_button" id="eval_button66" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_66" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_66" onclick="cycle_cell_output_type(66);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_66">
+                            <div class="cell_output_wrap" id="cell_output_66">
+                                
+                                    
+                                
+                            </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_66">
+                                    
+                                </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_66">
+                                    
+                                </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_59" class="cell_visible">
+    <div id="cell_59" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before59">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before59" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before59" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before59"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before59").bind("click",function (e) {
+                    insert_new_cell_before(59);
+                });
+                
+                $("#insert_new_text_cell_before59").bind("click",function (e) {
+                   insert_new_text_cell_before(59);
+                });
+                $("#legacy_new_cell_before59").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(59);
+                   } else {
+                      insert_new_cell_before(59);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="11" cols="80" spellcheck="false" id="cell_input_59" style="height: 216px;">def vol_gcd(topes):
+    """Finds the gcd of the volumes of a set of polytopes"""
+    
+    n = len(topes)
+    vols = []
+    
+    for i in range(n):
+        vols.append(volume(topes[i]))
+        
+    g = gcd(vols)
+    return g</textarea>
+                <input type="button" class="eval_button" id="eval_button59" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_59" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_59" onclick="cycle_cell_output_type(59);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_59">
+                            <div class="cell_output_wrap" id="cell_output_59"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_59"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_59"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_60" class="cell_visible">
+    <div id="cell_60" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before60">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before60" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before60" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before60"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before60").bind("click",function (e) {
+                    insert_new_cell_before(60);
+                });
+                
+                $("#insert_new_text_cell_before60").bind("click",function (e) {
+                   insert_new_text_cell_before(60);
+                });
+                $("#legacy_new_cell_before60").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(60);
+                   } else {
+                      insert_new_cell_before(60);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="9" cols="80" spellcheck="false" id="cell_input_60" style="height: 197px;">def gcd_tope(topes):
+    """Note that there will always be a simplex in the triangulation with the gcd as its volume."""
+    
+    g = vol_gcd(topes)
+    
+    for tope in topes:
+        if volume(tope) == g:
+            return tope</textarea>
+                <input type="button" class="eval_button" id="eval_button60" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_60" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_60" onclick="cycle_cell_output_type(60);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_60">
+                            <div class="cell_output_wrap" id="cell_output_60"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_60"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_60"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_61" class="cell_visible">
+    <div id="cell_61" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before61">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before61" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before61" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before61"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before61").bind("click",function (e) {
+                    insert_new_cell_before(61);
+                });
+                
+                $("#insert_new_text_cell_before61").bind("click",function (e) {
+                   insert_new_text_cell_before(61);
+                });
+                $("#legacy_new_cell_before61").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(61);
+                   } else {
+                      insert_new_cell_before(61);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="12" cols="80" spellcheck="false" id="cell_input_61" style="height: 216px;">def non_verts(tope, subtope):
+    """Returns a list of vertices in a polytope that are not also vertices in a given subtope"""
+    verts = sorted(list(tope.vertices_pc()))
+    sub_verts = list(subtope.vertices_pc())
+    
+    inds = []
+    for i in range(len(verts)):
+        if verts[i] not in sub_verts:
+            inds.append(i)
+    
+    return inds</textarea>
+                <input type="button" class="eval_button" id="eval_button61" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_61" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_61" onclick="cycle_cell_output_type(61);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_61">
+                            <div class="cell_output_wrap" id="cell_output_61"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_61"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_61"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_63" class="cell_visible">
+    <div id="cell_63" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before63">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before63" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before63" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before63"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before63").bind("click",function (e) {
+                    insert_new_cell_before(63);
+                });
+                
+                $("#insert_new_text_cell_before63").bind("click",function (e) {
+                   insert_new_text_cell_before(63);
+                });
+                $("#legacy_new_cell_before63").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(63);
+                   } else {
+                      insert_new_cell_before(63);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="23" cols="80" spellcheck="false" id="cell_input_63" style="height: 406px;">def basis_change_ideal(tope):
+    """Computes the change-of-basis ideal for a given polytope. This will be modded out as part of the construction of the Chow group."""
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    n = 4
+    C = PolynomialRing(QQ, names=['t']+['D'+str(i+1) for i in range(k)] + ['J'+str(i+1) for i in range(k-n)])
+    DD = list(C.gens()[1:-(k-n)])
+    JJ = list(C.gens()[-(k-n):]);
+    
+    tri = triangulations(tope, False)
+    topes = tri_to_topes(tope, tri)
+    stope = gcd_tope(topes)
+    nv = non_verts(tope, stope)
+    
+    m = len(nv)
+    gens = []
+    for i in range(m):
+        gens.append(str(DD[nv[i]]) + '-' + str(JJ[i])) 
+    
+    bci = C.ideal(gens)
+    return bci</textarea>
+                <input type="button" class="eval_button" id="eval_button63" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_63" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_63" onclick="cycle_cell_output_type(63);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_63">
+                            <div class="cell_output_wrap" id="cell_output_63"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_63"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_63"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_64" class="cell_visible">
+    <div id="cell_64" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before64">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before64" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before64" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before64"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before64").bind("click",function (e) {
+                    insert_new_cell_before(64);
+                });
+                
+                $("#insert_new_text_cell_before64").bind("click",function (e) {
+                   insert_new_text_cell_before(64);
+                });
+                $("#legacy_new_cell_before64").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(64);
+                   } else {
+                      insert_new_cell_before(64);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="19" cols="80" spellcheck="false" id="cell_input_64" style="height: 330px;">def chow_group(tope):
+    """Computes the Chow group"""
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    n = 4
+    C = PolynomialRing(QQ, names=['t']+['D'+str(i+1) for i in range(k)] + ['J'+str(i+1) for i in range(k-n)])
+    DD = list(C.gens()[1:-(k-n)])
+    JJ = list(C.gens()[-(k-n):]);
+    
+    bci = basis_change_ideal(tope)
+    
+    Isr = stanley_reisner(tope)
+    Ilin = linear_ideal(tope)
+    #print R
+    chow_ideal = Isr + Ilin
+    #print chow_ideal
+
+    chow = QuotientRing(C, chow_ideal + bci)
+    return chow</textarea>
+                <input type="button" class="eval_button" id="eval_button64" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_64" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_64" onclick="cycle_cell_output_type(64);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_64">
+                            <div class="cell_output_wrap" id="cell_output_64"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_64"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_64"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_68" class="cell_visible">
+    <div id="cell_68" class="cell_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before68">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before68" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before68" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before68"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before68").bind("click",function (e) {
+                    insert_new_cell_before(68);
+                });
+                
+                $("#insert_new_text_cell_before68").bind("click",function (e) {
+                   insert_new_text_cell_before(68);
+                });
+                $("#legacy_new_cell_before68").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(68);
+                   } else {
+                      insert_new_cell_before(68);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="44" cols="80" spellcheck="false" id="cell_input_68" style="height: 729px;">def triple_intersections(tope):
+    """Computes the triple intersection tensor for a given polytope"""
+    verts = sorted(list(tope.vertices_pc()))
+    k = len(verts)
+    n = 4
+    A = chow_group(tope)
+    
+    vol = 0
+    stope = None
+    
+    combs = Combinations(k, 4)
+    
+    for comb in combs:
+        [i, j, l, m] = comb
+        stope = vind_to_tope(tope, [i, j, l, m])
+        vol = volume(stope)
+        if vol != 0:
+            break           
+
+
+    n_vol = volume(stope)
+    [n1, n2, n3, n4] = [i, j, l, m]
+    n_prod = A.gens()[n1+1]*A.gens()[n2+1]*A.gens()[n3+1]*A.gens()[n4+1]
+    print n_prod, "======", n_vol
+    
+    X = sum(A.gens()[1:k+1])    # the Calabi-Yau
+    intersections = np.empty(shape=(k-n,k-n,k-n))
+    
+    jcombs = []
+    for i in range(k-n):
+        for j in range(k-n):
+            for k in range(k-n):
+                jcombs.append([i, j, k])
+    
+    for comb in jcombs:
+        #print comb
+        [i, j, l] = comb
+        prod = A.gens()[k+1+i]*A.gens()[k+1+j]*A.gens()[k+1+l]*X
+        #print prod
+        intr = prod / n_prod
+        #print intr
+        intr /= n_vol
+        #print intr
+        intersections[i, j, l] = int(round(intr, 0))
+    
+    return intersections</textarea>
+                <input type="button" class="eval_button" id="eval_button68" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_68" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_68" onclick="cycle_cell_output_type(68);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_68">
+                            <div class="cell_output_wrap" id="cell_output_68"> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_68"> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_68"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_65" class="cell_visible">
+    <div id="cell_65" class="cell_not_evaluated">
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before65">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before65" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before65" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before65"></div>
+            </div>
+            <script type="text/javascript">
+                $("#insert_new_compute_cell_before65").bind("click",function (e) {
+                    insert_new_cell_before(65);
+                });
+                
+                $("#insert_new_text_cell_before65").bind("click",function (e) {
+                   insert_new_text_cell_before(65);
+                });
+                $("#legacy_new_cell_before65").bind("click",function (e) {
+                   if (e.shiftKey){
+                      insert_new_text_cell_before(65);
+                   } else {
+                      insert_new_cell_before(65);
+                   }
+                });
+                
+            </script>
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="1" cols="80" spellcheck="false" id="cell_input_65" style="height: 178px;"></textarea>
+                <input type="button" class="eval_button" id="eval_button65" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_65" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_65" onclick="cycle_cell_output_type(65);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_65">
+                            <div class="cell_output_nowrap" id="cell_output_65"><pre class="shrunk">A triangulation: [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 3, 4], [0, 2, 3,
+4], [1, 2, 3, 4]]
+Stanley-Reisner ideal: Ideal (D1*D2*D3*D4*D5) of Multivariate Polynomial
+Ring in t, D1, D2, D3, D4, D5, J1 over Rational Field
+Intersection Tensor: [[[ 1.]]]</pre> </div>
+                            
+                                <div class="cell_output_nowrap_nowrap" id="cell_output_nowrap_65"><pre class="shrunk">A triangulation: [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 3, 4], [0, 2, 3, 4], [1, 2, 3, 4]]
+Stanley-Reisner ideal: Ideal (D1*D2*D3*D4*D5) of Multivariate Polynomial Ring in t, D1, D2, D3, D4, D5, J1 over Rational Field
+Intersection Tensor: [[[ 1.]]]</pre> </div>
+                            
+                                <div class="cell_output_html_nowrap" id="cell_output_html_65"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+
+    </div>
+</div>
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_87"><div id="cell_87" class="cell_evaluated">
+
+    
+    
+
+
+
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before87">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before87" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before87" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before87"></div>
+            </div>
+            
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="1" cols="80" spellcheck="false" id="cell_input_87" style="height: 140px;"></textarea>
+                <input type="button" class="eval_button" id="eval_button87" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_87" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_87" onclick="cycle_cell_output_type(87);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_87">
+                            <div class="cell_output_wrap" id="cell_output_87"><pre class="shrunk">A triangulation: [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 3, 4], [0, 2, 3,
+4], [1, 2, 3, 4]]
+Stanley-Reisner ideal: Ideal (D1*D2*D3*D4*D5) of Multivariate Polynomial
+Ring in t, D1, D2, D3, D4, D5, J1 over Rational Field
+Intersection Tensor: [[[ 5.]]]</pre> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_87"><pre class="shrunk">A triangulation: [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 3, 4], [0, 2, 3, 4], [1, 2, 3, 4]]
+Stanley-Reisner ideal: Ideal (D1*D2*D3*D4*D5) of Multivariate Polynomial Ring in t, D1, D2, D3, D4, D5, J1 over Rational Field
+Intersection Tensor: [[[ 5.]]]</pre> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_87"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+</div></div><div id="cell_outer_88"><div id="cell_88" class="cell_not_evaluated">
+
+    
+    
+
+
+
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before88">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before88" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before88" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before88"></div>
+            </div>
+            
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="1" cols="80" spellcheck="false" id="cell_input_88" style="height: 235px;"></textarea>
+                <input type="button" class="eval_button" id="eval_button88" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_88" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_88" onclick="cycle_cell_output_type(88);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_88">
+                            <div class="cell_output_wrap" id="cell_output_88"><pre class="shrunk">A triangulation: [[0, 1, 2, 3], [0, 1, 2, 5], [0, 1, 3, 5], [0, 2, 3,
+4], [0, 2, 4, 5], [0, 3, 4, 5], [1, 2, 3, 5], [2, 3, 4, 5]]
+
+Stanley-Reisner ideal: Ideal (D2*D5, D1*D2*D5, D2*D3*D5, D2*D4*D5,
+D2*D5*D6, D1*D2*D3*D5, D1*D2*D4*D5, D1*D2*D5*D6, D1*D3*D4*D6,
+D2*D3*D4*D5, D2*D3*D5*D6, D2*D4*D5*D6, D1*D2*D3*D4*D5, D1*D2*D3*D4*D6,
+D1*D2*D3*D5*D6, D1*D2*D4*D5*D6, D1*D3*D4*D5*D6, D2*D3*D4*D5*D6) of
+Multivariate Polynomial Ring in t, D1, D2, D3, D4, D5, D6, J1, J2 over
+Rational Field
+
+Intersection Tensor:
+[[[ 0.  0.]
+  [ 0.  4.]]
+
+ [[ 0.  4.]
+  [ 4.  5.]]]</pre> </div>
+                            
+                                <div class="cell_output_nowrap_wrap" id="cell_output_nowrap_88"><pre class="shrunk">A triangulation: [[0, 1, 2, 3], [0, 1, 2, 5], [0, 1, 3, 5], [0, 2, 3, 4], [0, 2, 4, 5], [0, 3, 4, 5], [1, 2, 3, 5], [2, 3, 4, 5]]
+
+Stanley-Reisner ideal: Ideal (D2*D5, D1*D2*D5, D2*D3*D5, D2*D4*D5, D2*D5*D6, D1*D2*D3*D5, D1*D2*D4*D5, D1*D2*D5*D6, D1*D3*D4*D6, D2*D3*D4*D5, D2*D3*D5*D6, D2*D4*D5*D6, D1*D2*D3*D4*D5, D1*D2*D3*D4*D6, D1*D2*D3*D5*D6, D1*D2*D4*D5*D6, D1*D3*D4*D5*D6, D2*D3*D4*D5*D6) of Multivariate Polynomial Ring in t, D1, D2, D3, D4, D5, D6, J1, J2 over Rational Field
+
+Intersection Tensor:
+[[[ 0.  0.]
+  [ 0.  4.]]
+
+ [[ 0.  4.]
+  [ 4.  5.]]]</pre> </div>
+                            
+                                <div class="cell_output_html_wrap" id="cell_output_html_88"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+</div></div><div id="cell_outer_91"><div id="cell_91" class="cell_not_evaluated">
+
+    
+    
+
+
+
+
+        
+        
+        
+            <div class="insert_new_cell" id="insert_new_cell_before91">
+              <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_compute_cell_before91" title="Click to insert new compute cell."></div>
+                
+                  <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_text_cell_before91" title="Click to insert new rich-text cell."></div>
+                
+              <div class="legacy_insert_new_cell" id="legacy_new_cell_before91"></div>
+            </div>
+            
+        
+            
+                
+            
+            
+                <textarea class="cell_input" rows="1" cols="80" spellcheck="false" id="cell_input_91" style="height: 197px;"></textarea>
+                <input type="button" class="eval_button" id="eval_button91" title="Click here or press shift-return to evaluate" value="evaluate">
+            
+            
+
+            <div id="introspect_div_91" class="introspection"></div>
+        
+
+        
+        
+        <div class="cell_output_div">
+            <table class="cell_output_box">
+                <tbody><tr>
+                    <td class="cell_number" id="cell_number_91" onclick="cycle_cell_output_type(91);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="output_cell">
+                        <div class="cell_div_output_wrap" id="cell_div_output_91">
+                            <div class="cell_output_nowrap" id="cell_output_91"><pre class="shrunk">A triangulation: [[0, 1, 2, 3], [0, 1, 2, 5], [0, 1, 3, 4], [0, 1, 4,
+5], [0, 2, 3, 4], [0, 2, 4, 5], [1, 2, 3, 5], [1, 3, 4, 5], [2, 3, 4,
+5]]
+
+Stanley-Reisner ideal: Ideal (D1*D4*D6, D2*D3*D5, D1*D2*D3*D5,
+D1*D2*D4*D6, D1*D3*D4*D6, D1*D4*D5*D6, D2*D3*D4*D5, D2*D3*D5*D6,
+D1*D2*D3*D4*D5, D1*D2*D3*D4*D6, D1*D2*D3*D5*D6, D1*D2*D4*D5*D6,
+D1*D3*D4*D5*D6, D2*D3*D4*D5*D6) of Multivariate Polynomial Ring in t,
+D1, D2, D3, D4, D5, D6, J1, J2 over Rational Field
+
+Intersection Tensor:
+[[[ 0.  3.]
+  [ 3.  5.]]
+
+ [[ 3.  5.]
+  [ 5.  5.]]]</pre> </div>
+                            
+                                <div class="cell_output_nowrap_nowrap" id="cell_output_nowrap_91"><pre class="shrunk">A triangulation: [[0, 1, 2, 3], [0, 1, 2, 5], [0, 1, 3, 4], [0, 1, 4, 5], [0, 2, 3, 4], [0, 2, 4, 5], [1, 2, 3, 5], [1, 3, 4, 5], [2, 3, 4, 5]]
+
+Stanley-Reisner ideal: Ideal (D1*D4*D6, D2*D3*D5, D1*D2*D3*D5, D1*D2*D4*D6, D1*D3*D4*D6, D1*D4*D5*D6, D2*D3*D4*D5, D2*D3*D5*D6, D1*D2*D3*D4*D5, D1*D2*D3*D4*D6, D1*D2*D3*D5*D6, D1*D2*D4*D5*D6, D1*D3*D4*D5*D6, D2*D3*D4*D5*D6) of Multivariate Polynomial Ring in t, D1, D2, D3, D4, D5, D6, J1, J2 over Rational Field
+
+Intersection Tensor:
+[[[ 0.  3.]
+  [ 3.  5.]]
+
+ [[ 3.  5.]
+  [ 5.  5.]]]</pre> </div>
+                            
+                                <div class="cell_output_html_nowrap" id="cell_output_html_91"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+
+</div></div>
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+    
+
+    
+    
+
+
+
+
+
+
+  
+</div>
+    <div class="insert_new_cell" id="insert_last_cell">
+        <div class="ui-icon ui-icon-circle-plus wksht-icon_button" id="insert_new_last_compute_cell" title="Click to insert new compute cell."></div>
+        
+        <div class="ui-icon ui-icon-comment wksht-icon_button" id="insert_new_last_text_cell" title="Click to insert new rich-text cell."></div>
+        
+        <div class="legacy_insert_new_cell" id="legacy_new_last_cell"></div>
+    </div>  
+    <script type="text/javascript">
+        state_number = 795;
+        cell_id_list = [4, 41, 42, 43, 24, 51, 78, 45, 73, 32, 31, 46, 76, 48, 58, 57, 53, 54, 66, 59, 60, 61, 63, 64, 68, 65, 75, 72, 71, 69, 49, 56, 55, 47, 70, 18, 19, 20, 52, 44, 25, 37, 39, 22, 5, 11, 9];
+        queue_id_list = [];
+        
+        worksheet_locked = false;
+	    
+
+        $(document).ready(function () {
+            if (worksheet_name === "Untitled") {
+                rename_worksheet();
+            }
+         });
+        $("#insert_new_last_compute_cell").bind("click", function (e) {
+            insert_new_cell_after(cell_id_list[cell_id_list.length - 1]);
+        });
+    
+        
+        $("#insert_new_last_text_cell").bind("click", function (e) {
+            insert_new_text_cell_after(cell_id_list[cell_id_list.length - 1]);
+        });
+        $("#legacy_new_last_cell").bind("click",function (e) {
+            if (e.shiftKey){
+                insert_new_text_cell_after(cell_id_list[cell_id_list.length - 1]);
+            } else {
+                insert_new_cell_after(cell_id_list[cell_id_list.length - 1]);
+            }
+         });
+        
+    </script>
+</div>
+
+
+        </div>
+        
+    
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size1, monospace;"></div></div></body></html>
